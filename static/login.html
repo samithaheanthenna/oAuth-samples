@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo App</title>
+</head>
+<body>
+<form>
+    <button type="button"
+            onclick="window.open('https://www.facebook.com/dialog/oauth?response_type=code&client_id='+'{your app id}'+'&redirect_uri=http://localhost:8050/callback&scope=user_posts user_friends','_self')">
+        Authorize
+    </button>
+</form>
+</body>
+</html>

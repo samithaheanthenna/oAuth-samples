@@ -1,2 +1,2 @@
 # oAuth-samples
-This repository contains the oAuth sample implemented 
+This repository contains the oAuth sample implemented.

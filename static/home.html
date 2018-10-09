@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<form method="post" action="/logout">
+    <button name="submit-btn" id="submit-btn" type="button" onclick="getPosts()">Count friends</button>
+    <button name="logout-btn" id="logout-btn" type="submit">Logout</button>
+</form>
+</body>
+<script>
+    function getPosts() {
+        $.ajax({
+            type: "GET",
+            url: "/posts",
+            contentType: "application/json",
+            success: function(data) {
+                $("#submit-btn").before(`<p> You have ${jQuery.parseJSON(data).summary.total_count} number of Facebook friends </p>`);
+            },
+            error: function () {
+                $("#submit-btn").before('<p>Invalid session</p>');
+            }
+        });
+    }
+</script>
+</html>
